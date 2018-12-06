@@ -43,15 +43,15 @@ spinb.pack()
 def weiter():
     label1.configure(text = (eingabe.get()))
 
-knopf_we = Button(fenster, text = "weiter", command = weiter).pack(fill=X)
+knopf_we = Button(fenster, text = "Text lesen", command = weiter).pack(fill=X)
 
 def rechnen():
     try:
         x = float(eingabe.get())
         label1.configure(text=(x**0.5))
     except:
-        #label1.configure(text = "Bitte eine Zahl eingeben")
-        messagebox.showerror("Fehler", "Bitte eine Zahl eingeben")
+        label1.configure(text = "Bitte eine Zahl eingeben")
+        #messagebox.showerror("Fehler", "Bitte eine Zahl eingeben")
 
 
 
@@ -64,7 +64,7 @@ knopf_zu = Button(fenster, text = "rechnen", command = rechnen).pack(fill=X)
 
 
 #Verlassen per Knopfdruck
-knopf_ex = Button(fenster, text = "Exit", command = exit).pack(fill=X)
+knopf_ex = Button(fenster, text = "Exit", command = fenster.destroy).pack(fill=X)
 
 
 mainloop()
